@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>vim快捷键学习 | 张勇杰的个人博客</title>
+    <meta name="author" content="onzing" />
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="张勇杰的个人博客" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+    <style>html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]),
+[hidden] {
+  display: none;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body {
+  font-family: Helvetica, Tahoma, Arial, 'Hiragino Sans GB', '\51AC\9752\9ED1\4F53', 'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1', STXihei, '\534E\6587\7EC6\9ED1', SimSun, '\5B8B\4F53', Heiti, '\9ED1\4F53', sans-serif;
+  font-size: 16px;
+}
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+}
+a {
+  color: #4a75b5;
+  text-decoration: none;
+  outline: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a.external {
+  padding-right: 13px;
+  background: url("/images/icons.gif") no-repeat right 1px;
+}
+a.external:hover {
+  background-position: right -15px;image
+}
+.index-wrapper .aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  max-width: 500px;
+  background: #59a0b0;
+}
+@media screen and (max-width: 767px) {
+  .index-wrapper .aside {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    max-width: none;
+  }
+}
+.index-wrapper .info-card {
+  position: absolute;
+  margin-top: 70%;
+  text-align: center;
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .index-wrapper .info-card {
+    margin-top: 70px;
+  }
+}
+.index-wrapper .info-card h1 {
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 20px;
+  /*text-shadow: 0 0 80px rgba(255,255,255,0.5);*/
+  letter-spacing: 0.15em;
+  text-shadow: rgba(255,255,255,0.5) 0 0 15px, rgba(255,255,255,0.5) 0 0 10px;
+}
+.index-wrapper .info-card a {
+  margin: 0 15px;
+}
+.index-wrapper .index-content {
+  margin-left: 30%;
+  padding-top: 80px;
+  padding-right: 15%;
+}
+@media screen and (max-width: 767px) {
+  .index-wrapper .index-content {
+    margin-left: 0;
+    padding-right: 0;
+  }
+}
+.index-wrapper .artical-list {
+  width: 70%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  .index-wrapper .artical-list {
+    width: 85%;
+  }
+}
+.index-wrapper .artical-list li {
+  margin-bottom: 70px;
+}
+.index-wrapper .title {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 15px;
+  word-break: break-all;
+  font-weight: bold;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+  color: #444;
+}
+@media screen and (max-width: 767px) {
+  .index-wrapper .title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+.index-wrapper .title:hover {
+  color: #e50053;
+  text-decoration: none;
+}
+.index-wrapper .title-desc {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.body-post {
+  background: #f5f5f5;
+}
+@media screen and (max-width: 767px) {
+  .body-post {
+    background: #fff;
+  }
+}
+.post-wrapper {
+  width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 80px 60px;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper {
+    width: 85%;
+    margin: 100px auto 50px;
+    padding: 0;
+  }
+}
+.post-wrapper .post-title,
+.post-wrapper .post-title a {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #000;
+  text-align: center;
+  word-wrap: break-word;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper .post-title,
+  .post-wrapper .post-title a {
+    font-size: 24px;
+  }
+}
+.post-wrapper .post-title:hover,
+.post-wrapper .post-title a:hover {
+  text-decoration: none;
+}
+.post-wrapper .post-date {
+  text-align: center;
+  color: #999;
+  margin-bottom: 60px;
+  font-size: 14px;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper .post-date {
+    margin-bottom: 40px;
+  }
+}
+.post-wrapper h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+@media $mobiel {
+  .post-wrapper h2 {
+    font-size: 20px;
+  }
+}
+.post-wrapper h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #222;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper h3 {
+    font-size: 16px;
+  }
+}
+.post-wrapper h4,
+.post-wrapper h5,
+.post-wrapper h6 {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.post-wrapper p {
+  margin-bottom: 40px;
+  line-height: 1.8em;
+}
+.post-wrapper code {
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 0 5px;
+  font-family: "Courier";
+  line-height: 14px;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+.post-wrapper pre {
+  background: #f7f3f7;
+  padding: 20px 30px 15px;
+  overflow: auto;
+  margin-bottom: 40px;
+  font-size: 14px;
+  border: 1px solid #eee;
+  color: #b9bdb6;
+  margin-top: -20px;
+}
+.post-wrapper pre code {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  word-wrap: normal;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper pre code {
+    line-height: 1em;
+    font-size: 12px;
+  }
+}
+.post-wrapper h4+pre,
+.post-wrapper h3+pre {
+  margin-top: 20px;
+}
+.post-wrapper ul {
+  margin-bottom: 25px;
+  margin-left: 25px;
+}
+.post-wrapper ul li {
+  margin-bottom: 5px;
+  list-style: disc;
+  line-height: 1.8em;
+}
+.post-wrapper p + ul {
+  margin-top: -20px;
+}
+.post-wrapper ol {
+  margin-bottom: 25px;
+  margin-left: 25px;
+}
+.post-wrapper ol li {
+  margin-bottom: 5px;
+  list-style: decimal;
+  line-height: 1.1em;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper ol li {
+    margin-bottom: 0;
+    line-height: 1em;
+  }
+}
+.post-wrapper blockquote {
+  margin-left: 25px;
+  font-size: 14px;
+  font-style: italic;
+}
+.post-wrapper img {
+  max-width: 670px;
+  display: block;
+  margin: 10px auto;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper img {
+    max-width: 90%;
+  }
+}
+.post-wrapper table {
+  margin: 0 auto;
+}
+.about-wrapper {
+  background: #7e96a9;
+  width: 900px;
+  margin: 0 auto;
+  padding: 30px 60px;
+}
+@media screen and (max-width: 767px) {
+  .about-wrapper {
+    width: 100%;
+    padding: 0 7.5% 30px;
+  }
+}
+.about-wrapper .aboutme {
+  zoom: 1;
+}
+.about-wrapper .aboutme:before,
+.about-wrapper .aboutme:after {
+  content: "";
+  display: table;
+}
+.about-wrapper .aboutme:after {
+  clear: both;
+}
+.about-wrapper .aboutme h2 {
+  margin-bottom: 20px;
+}
+.about-wrapper .aboutme h2 a {
+  font-size: 18px;
+}
+.about-wrapper .aboutme li {
+  line-height: 1.4;
+  margin-bottom: 10px;
+  float: left;
+  width: 50%;
+}
+@media screen and (max-width: 767px) {
+  .about-wrapper .aboutme li {
+    float: none;
+    width: 80%;
+  }
+}
+.about-wrapper .aboutme a {
+  color: #fff;
+  font-size: 14px;
+}
+#particles-js {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: 20%;
+  -moz-background-size: 20%;
+  background-size: 20%;
+  background-position: 50% 50%;
+  background: #38658c;
+  background: -webkit-radial-gradient(top left, #4682B4, #4682B4);
+  background: -moz-radial-gradient(top left, #4682B4, #4682B4);
+  background: -o-radial-gradient(top left, #4682B4, #4682B4);
+  background: -ms-radial-gradient(top left, #4682B4, #4682B4);
+  background: radial-gradient(to bottom right, #4682B4, #4682B4);
+}
+#disqus_container {
+  font-size: 12px;
+}
+#disqus_container .share-con {
+  float: right;
+  margin-bottom: 20px;
+}
+#disqus_container a.comment {
+  font-size: 14px;
+}
+.prettyprint {
+  background: #f7f3f7;
+  border: 0 !important;
+}
+.pln {
+  color: #1b181b;
+}
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #5a7b8c;
+}
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L4,
+li.L5,
+li.L6,
+li.L7,
+li.L8,
+li.L9 {
+  padding-left: 0.4em;
+  background-color: #f7f3f7;
+  list-style-type: decimal;
+}
+@media screen {
+  .str {
+    color: #918b3b;
+  }
+  .kwd {
+    color: #7b59c0;
+  }
+  .com {
+    color: #5a7b8c;
+  }
+  .typ {
+    color: #516aec;
+  }
+  .lit {
+    color: #a65926;
+  }
+  .pun {
+    color: #1b181b;
+  }
+  .opn {
+    color: #1b181b;
+  }
+  .clo {
+    color: #1b181b;
+  }
+  .tag {
+    color: #ca402b;
+  }
+  .atn {
+    color: #a65926;
+  }
+  .atv {
+    color: #159393;
+  }
+  .dec {
+    color: #a65926;
+  }
+  .var {
+    color: #ca402b;
+  }
+  .fun {
+    color: #516aec;
+  }
+}
+.wiki h2 {
+  cursor: pointer;
+}
+.wiki ul {
+  margin-left: 30px;
+  margin-bottom: 20px;
+  list-style: disc;
+}
+.wiki ul li {
+  margin-bottom: 5px;
+}
+.wiki ul ul {
+  list-style: circle;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+</style>
+  </head>
+
+  <body class="body-post">
+  <div class="post-wrapper">
+    <h1 class="post-title"><a href="/vim-learn" title="vim快捷键学习">vim快捷键学习</a></h1>
+    <p class="post-date">2015-03-18</p>
+    <p>##插入模式
+* a – 在光标后插入
+* o – 在当前行后插入新的一行
+* O – 在当前行前插入新的一行
+* cw – 删除光标所在位置单词的从光标到单词结尾部分</p>
+
+<p>##移动光标
+* 0 – 数字0，当行头
+* ^ – 到本行第一个不是blank字符的位置（blank字符就是空格，tab， 换行，回车等）
+* $ – 到本行行尾
+* /test – 搜索test的字符串（搜索出多个结果，可按n键到下一个）
+* NG/:N – 到第N行（G是大写的）
+* gg – 到第一行（相当于1G，或:1）
+* G – 到最后一行
+* w – 到下一个单词的开头
+* e – 到下一个单词的结尾
+* % – 匹配对应点括号，如（，{， [。（需要把光标先移到括号上）
+* <em>和# – 匹配光标当前所在的单词，移动光标到下一个（或上一个）匹配单词（</em>是下一个，#是上一个）
+* <strong>很多命令可以和移动光标的命令联动</strong>
+```</p>
+<start position=""><command /><end position="">
+如0y$
+    * 0 -- 先到行头
+    * y -- 从这里开始拷贝
+    * $ -- 拷贝到本行最后一个字符 
+可以输入ye，从当前的位置拷贝懂啊本单词的最后一个字符。
+也可以输入y2/test来拷贝2个“foo”之间的字符串
+还有很多时间并不一定要按y才能拷贝，下面的命令也会拷贝：
+    * d（删除）
+    * v（可视化选择）
+    * gU（变大写）
+    * gu （变小写）
+（可视化选择可以先按v，然后移动光标，文本就会被选择，
+然后可以d，可以y，可以改变大小写）
+```
+
+##拷贝/粘贴
+* p/P -- 粘贴（p是在当前位置之后，P是在当前位置之前）
+* yy -- 拷贝当前行（想当于ddp -- dd删除当前行后保存至粘贴板）
+
+## 撤销/重做
+* u -- 撤销上一个编辑操作
+* Ctrl-r -- 如果撤销太多，回退前一个命令（撤销一个撤销）
+
+## 打开/保存/退出/改变文件
+* :e &lt;path/to/file&gt; -- 打开一个文件
+* :w -- 存盘
+* :saveas &lt;path/to/file&gt; -- 另存为 &lt;path/to/file&gt;
+* :x, ZZ , :wq 保存并退出（:x表示紧在需要时保存，ZZ不需要输入冒号并回车）
+* :q! -- 退出不保存，:qa!强行退出正在编辑的文件，就算别的文件有更改。
+* :bn, :bq -- 可以同时打开很多文件，使用这两个命令来切换下一个或上一个文件（可以使用:n到下一个文件）
+
+##重复执行命令
+* . -- (小数点)可以重复上一次的命令
+* N<command /> -- 重复某个命令N次
+```
+ 2dd -- 删除2行
+3p -- 粘贴文本3次
+100itest [ESC] -- 会写下"
+test test test test test test test test test test 
+test test test test test test test test test test 
+test test test test test test test test test test 
+test test test test test test test test test test 
+test test test test test test test test test test 
+test test test test test test test test test test 
+test test test test test test test test test test 
+test test test test test test test test test test 
+test test test test test test test test test test 
+test test test test test test test test test test"
+ . -- 重复上一个命令 -- 100"test"
+ 3. -- 重复3次"test"
+```
+
+感谢[酷壳](http://coolshell.cn/articles/5426.html)
+</end></start>
+
+    <div id="disqus_container">
+  <div class="share-con">
+    <script type="text/javascript" charset="utf-8">
+      (function(){
+        var param = {
+          url: 'http://onzing.com/vim-learn',
+          type: '6',
+          title: '《vim快捷键学习》' + '- 减少触控板或者鼠标的使用能让自己更加投入到代码上，vim作为一大利器，快捷键很多，不过常用的学会使用就可以很大的提高工作效率',
+          ralateUid: '1511624324',
+          rnd:new Date().valueOf()
+        }
+        var temp = [];
+        for( var p in param ){
+          temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+        }
+        document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="86" height="16"></iframe>')
+      })()
+    </script>
+  </div>
+
+  <div id="disqus_thread"></div>
+</div>
+
+  </div>
+
+  <div class="about-wrapper">
+  <iframe width="100%" height="75" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=75&fansRow=2&ptype=1&speed=0&skin=5&isTitle=0&noborder=0&isWeibo=0&isFans=0&uid=1511624324&verifier=fab8d67b&dpc=1" style="margin: 30px 0;"></iframe>
+
+  <div class="aboutme">
+    <h2><a href="/">所有文章</a></h2>
+    <ul>
+      
+      <li>
+        <a href="/vim-learn" class="title">vim快捷键学习</a>
+      </li>
+      
+      <li>
+        <a href="/git-commad-line" class="title">在终端中使用Git</a>
+      </li>
+      
+      <li>
+        <a href="/command-line" class="title">常用命令</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+  <script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+  <script src="/js/post.js" type="text/javascript"></script>
+</body>
+
+</html>

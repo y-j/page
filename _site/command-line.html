@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>常用命令 | 张勇杰的个人博客</title>
+    <meta name="author" content="onzing" />
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="张勇杰的个人博客" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+    <style>html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]),
+[hidden] {
+  display: none;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body {
+  font-family: Helvetica, Tahoma, Arial, 'Hiragino Sans GB', '\51AC\9752\9ED1\4F53', 'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1', STXihei, '\534E\6587\7EC6\9ED1', SimSun, '\5B8B\4F53', Heiti, '\9ED1\4F53', sans-serif;
+  font-size: 16px;
+}
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+}
+a {
+  color: #4a75b5;
+  text-decoration: none;
+  outline: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a.external {
+  padding-right: 13px;
+  background: url("/images/icons.gif") no-repeat right 1px;
+}
+a.external:hover {
+  background-position: right -15px;image
+}
+.index-wrapper .aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  max-width: 500px;
+  background: #59a0b0;
+}
+@media screen and (max-width: 767px) {
+  .index-wrapper .aside {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    max-width: none;
+  }
+}
+.index-wrapper .info-card {
+  position: absolute;
+  margin-top: 70%;
+  text-align: center;
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .index-wrapper .info-card {
+    margin-top: 70px;
+  }
+}
+.index-wrapper .info-card h1 {
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 20px;
+  /*text-shadow: 0 0 80px rgba(255,255,255,0.5);*/
+  letter-spacing: 0.15em;
+  text-shadow: rgba(255,255,255,0.5) 0 0 15px, rgba(255,255,255,0.5) 0 0 10px;
+}
+.index-wrapper .info-card a {
+  margin: 0 15px;
+}
+.index-wrapper .index-content {
+  margin-left: 30%;
+  padding-top: 80px;
+  padding-right: 15%;
+}
+@media screen and (max-width: 767px) {
+  .index-wrapper .index-content {
+    margin-left: 0;
+    padding-right: 0;
+  }
+}
+.index-wrapper .artical-list {
+  width: 70%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  .index-wrapper .artical-list {
+    width: 85%;
+  }
+}
+.index-wrapper .artical-list li {
+  margin-bottom: 70px;
+}
+.index-wrapper .title {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 15px;
+  word-break: break-all;
+  font-weight: bold;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+  color: #444;
+}
+@media screen and (max-width: 767px) {
+  .index-wrapper .title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+.index-wrapper .title:hover {
+  color: #e50053;
+  text-decoration: none;
+}
+.index-wrapper .title-desc {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.body-post {
+  background: #f5f5f5;
+}
+@media screen and (max-width: 767px) {
+  .body-post {
+    background: #fff;
+  }
+}
+.post-wrapper {
+  width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 80px 60px;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper {
+    width: 85%;
+    margin: 100px auto 50px;
+    padding: 0;
+  }
+}
+.post-wrapper .post-title,
+.post-wrapper .post-title a {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #000;
+  text-align: center;
+  word-wrap: break-word;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper .post-title,
+  .post-wrapper .post-title a {
+    font-size: 24px;
+  }
+}
+.post-wrapper .post-title:hover,
+.post-wrapper .post-title a:hover {
+  text-decoration: none;
+}
+.post-wrapper .post-date {
+  text-align: center;
+  color: #999;
+  margin-bottom: 60px;
+  font-size: 14px;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper .post-date {
+    margin-bottom: 40px;
+  }
+}
+.post-wrapper h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+@media $mobiel {
+  .post-wrapper h2 {
+    font-size: 20px;
+  }
+}
+.post-wrapper h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #222;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper h3 {
+    font-size: 16px;
+  }
+}
+.post-wrapper h4,
+.post-wrapper h5,
+.post-wrapper h6 {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.post-wrapper p {
+  margin-bottom: 40px;
+  line-height: 1.8em;
+}
+.post-wrapper code {
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 0 5px;
+  font-family: "Courier";
+  line-height: 14px;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+.post-wrapper pre {
+  background: #f7f3f7;
+  padding: 20px 30px 15px;
+  overflow: auto;
+  margin-bottom: 40px;
+  font-size: 14px;
+  border: 1px solid #eee;
+  color: #b9bdb6;
+  margin-top: -20px;
+}
+.post-wrapper pre code {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  word-wrap: normal;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper pre code {
+    line-height: 1em;
+    font-size: 12px;
+  }
+}
+.post-wrapper h4+pre,
+.post-wrapper h3+pre {
+  margin-top: 20px;
+}
+.post-wrapper ul {
+  margin-bottom: 25px;
+  margin-left: 25px;
+}
+.post-wrapper ul li {
+  margin-bottom: 5px;
+  list-style: disc;
+  line-height: 1.8em;
+}
+.post-wrapper p + ul {
+  margin-top: -20px;
+}
+.post-wrapper ol {
+  margin-bottom: 25px;
+  margin-left: 25px;
+}
+.post-wrapper ol li {
+  margin-bottom: 5px;
+  list-style: decimal;
+  line-height: 1.1em;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper ol li {
+    margin-bottom: 0;
+    line-height: 1em;
+  }
+}
+.post-wrapper blockquote {
+  margin-left: 25px;
+  font-size: 14px;
+  font-style: italic;
+}
+.post-wrapper img {
+  max-width: 670px;
+  display: block;
+  margin: 10px auto;
+}
+@media screen and (max-width: 767px) {
+  .post-wrapper img {
+    max-width: 90%;
+  }
+}
+.post-wrapper table {
+  margin: 0 auto;
+}
+.about-wrapper {
+  background: #7e96a9;
+  width: 900px;
+  margin: 0 auto;
+  padding: 30px 60px;
+}
+@media screen and (max-width: 767px) {
+  .about-wrapper {
+    width: 100%;
+    padding: 0 7.5% 30px;
+  }
+}
+.about-wrapper .aboutme {
+  zoom: 1;
+}
+.about-wrapper .aboutme:before,
+.about-wrapper .aboutme:after {
+  content: "";
+  display: table;
+}
+.about-wrapper .aboutme:after {
+  clear: both;
+}
+.about-wrapper .aboutme h2 {
+  margin-bottom: 20px;
+}
+.about-wrapper .aboutme h2 a {
+  font-size: 18px;
+}
+.about-wrapper .aboutme li {
+  line-height: 1.4;
+  margin-bottom: 10px;
+  float: left;
+  width: 50%;
+}
+@media screen and (max-width: 767px) {
+  .about-wrapper .aboutme li {
+    float: none;
+    width: 80%;
+  }
+}
+.about-wrapper .aboutme a {
+  color: #fff;
+  font-size: 14px;
+}
+#particles-js {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: 20%;
+  -moz-background-size: 20%;
+  background-size: 20%;
+  background-position: 50% 50%;
+  background: #38658c;
+  background: -webkit-radial-gradient(top left, #4682B4, #4682B4);
+  background: -moz-radial-gradient(top left, #4682B4, #4682B4);
+  background: -o-radial-gradient(top left, #4682B4, #4682B4);
+  background: -ms-radial-gradient(top left, #4682B4, #4682B4);
+  background: radial-gradient(to bottom right, #4682B4, #4682B4);
+}
+#disqus_container {
+  font-size: 12px;
+}
+#disqus_container .share-con {
+  float: right;
+  margin-bottom: 20px;
+}
+#disqus_container a.comment {
+  font-size: 14px;
+}
+.prettyprint {
+  background: #f7f3f7;
+  border: 0 !important;
+}
+.pln {
+  color: #1b181b;
+}
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #5a7b8c;
+}
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L4,
+li.L5,
+li.L6,
+li.L7,
+li.L8,
+li.L9 {
+  padding-left: 0.4em;
+  background-color: #f7f3f7;
+  list-style-type: decimal;
+}
+@media screen {
+  .str {
+    color: #918b3b;
+  }
+  .kwd {
+    color: #7b59c0;
+  }
+  .com {
+    color: #5a7b8c;
+  }
+  .typ {
+    color: #516aec;
+  }
+  .lit {
+    color: #a65926;
+  }
+  .pun {
+    color: #1b181b;
+  }
+  .opn {
+    color: #1b181b;
+  }
+  .clo {
+    color: #1b181b;
+  }
+  .tag {
+    color: #ca402b;
+  }
+  .atn {
+    color: #a65926;
+  }
+  .atv {
+    color: #159393;
+  }
+  .dec {
+    color: #a65926;
+  }
+  .var {
+    color: #ca402b;
+  }
+  .fun {
+    color: #516aec;
+  }
+}
+.wiki h2 {
+  cursor: pointer;
+}
+.wiki ul {
+  margin-left: 30px;
+  margin-bottom: 20px;
+  list-style: disc;
+}
+.wiki ul li {
+  margin-bottom: 5px;
+}
+.wiki ul ul {
+  list-style: circle;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+</style>
+  </head>
+
+  <body class="body-post">
+  <div class="post-wrapper">
+    <h1 class="post-title"><a href="/command-line" title="常用命令">常用命令</a></h1>
+    <p class="post-date">2014-12-18</p>
+    <ul>
+  <li>
+    <p><code class="highlighter-rouge">ls</code> 列出当前目录下的所有文件
+  &gt; <code class="highlighter-rouge">ls -l</code> 列出可见的所有文件以及更多的文件信息
+<code class="highlighter-rouge">ls -a</code>  列出所有文件（包括隐藏文件）
+<code class="highlighter-rouge">ls test*\?.txt</code> 列出与之匹配的文件，（<em>|?都是元字符）</em>可以匹配0个或多个任意字符，？可以匹配一个字符</p>
+  </li>
+  <li><code class="highlighter-rouge">cat filename </code> 查看文件内容</li>
+  <li><code class="highlighter-rouge">cat -b filename </code> 查看文件内容并显示行号</li>
+  <li><code class="highlighter-rouge">wc filename </code> 统计当前文件的行数，单词数和字符数</li>
+  <li><code class="highlighter-rouge">cp source_file destination_file</code> 复制文件</li>
+  <li><code class="highlighter-rouge">mv old_file new_file</code> 移动文件（如果操作是在一个文件夹，相当于重命名文件）</li>
+  <li><code class="highlighter-rouge">mv filename newfilename</code> 重命名文件</li>
+  <li><code class="highlighter-rouge">mv olddir newdir</code> 重命名目录</li>
+  <li><code class="highlighter-rouge">rm filename</code> 删除文件</li>
+  <li><code class="highlighter-rouge">rm -rf dir</code> 删除文件夹内所有内容（谨慎操作）</li>
+  <li><code class="highlighter-rouge">rm filename1 filename2 filename3</code> 一次删除多个文件</li>
+  <li><code class="highlighter-rouge">cd ~</code> 进入主目录</li>
+  <li><code class="highlighter-rouge">cd ..</code> 返回上级目录（.指当前目录，..指上级目录）</li>
+  <li><code class="highlighter-rouge">cd (/)test</code> 进入test目录（/表示根目录，以/开头称为绝对路径，表示当前文件与根目录的关系，不以/开头称为相对路径，表示文件与当前目录的关系）</li>
+  <li><code class="highlighter-rouge">pwd</code> 当前所在的目录</li>
+  <li><code class="highlighter-rouge">touch filename</code> 创建一个空文件</li>
+  <li><code class="highlighter-rouge">mkdir dirname</code> 创建目录（后跟多个目录名可以一起创建多个目录）</li>
+  <li><code class="highlighter-rouge">mkdir -p /tmp/dir/test</code> 增加-p选项可以一级一级创建所需目录，即使上级目录不存在</li>
+  <li><code class="highlighter-rouge">rmdir dirname</code> 删除目录（后跟多个目录名可以起删除）</li>
+  <li><code class="highlighter-rouge">grep pattern file(s)</code> 使用正则搜索文本</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><code class="highlighter-rouge">ls -l | grep "test"</code> 只显示包含“test”的文件（</td>
+          <td>把两个命令链接起来，前一个命令的输出作为下一个命令的输入，这叫做管道）</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><code class="highlighter-rouge">ls | grep -v "test"</code> 反转查询，输出不匹配的行</li>
+  <li><code class="highlighter-rouge">ls | grep -i "test"</code> 不区分大小写进行匹配</li>
+  <li><code class="highlighter-rouge">ls -l | grep "test" | sort -n</code> 按数字大小排序（-r 降序排序，-f 不区分大小写）</li>
+  <li><code class="highlighter-rouge">ls -l | grep "test" | sort -n | more</code> 分页显示（space可以查看下一屏，b键查看上一屏）</li>
+  <li><code class="highlighter-rouge">ls &amp;</code> 创建后台进程在命令后加&amp;即可</li>
+  <li><code class="highlighter-rouge">ps</code> 查看进程的运行状态（-f选项查看更多信息，f是full的意思，-a显示所有用户的所有进程，-x显示无终端的进程，-e显示所有进程）</li>
+  <li><code class="highlighter-rouge">kill pidnumber(pid编号)</code> 结束进程（Ctrl+c也是结束进程，Ctrl+z暂停进程）</li>
+  <li><code class="highlighter-rouge">top</code> 显示进程的更多信息（物理内存，虚拟内存，cpu使用率等）</li>
+  <li><code class="highlighter-rouge">uptime</code> 获取主机运行时间</li>
+  <li><code class="highlighter-rouge">jobs -l</code> 当前任务包含的进程</li>
+  <li><code class="highlighter-rouge">fg %jobnumber</code>  将后台任务调到前台</li>
+  <li><code class="highlighter-rouge">bg %jobnumber</code> 将前台任务调到后台</li>
+</ul>
+
+    <div id="disqus_container">
+  <div class="share-con">
+    <script type="text/javascript" charset="utf-8">
+      (function(){
+        var param = {
+          url: 'http://onzing.com/command-line',
+          type: '6',
+          title: '《常用命令》' + '- 使用命令行再配合着item在mac上能显著的提高工作效率，这些事常用的一些命令',
+          ralateUid: '1511624324',
+          rnd:new Date().valueOf()
+        }
+        var temp = [];
+        for( var p in param ){
+          temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+        }
+        document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="86" height="16"></iframe>')
+      })()
+    </script>
+  </div>
+
+  <div id="disqus_thread"></div>
+</div>
+
+  </div>
+
+  <div class="about-wrapper">
+  <iframe width="100%" height="75" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=75&fansRow=2&ptype=1&speed=0&skin=5&isTitle=0&noborder=0&isWeibo=0&isFans=0&uid=1511624324&verifier=fab8d67b&dpc=1" style="margin: 30px 0;"></iframe>
+
+  <div class="aboutme">
+    <h2><a href="/">所有文章</a></h2>
+    <ul>
+      
+      <li>
+        <a href="/vim-learn" class="title">vim快捷键学习</a>
+      </li>
+      
+      <li>
+        <a href="/git-commad-line" class="title">在终端中使用Git</a>
+      </li>
+      
+      <li>
+        <a href="/command-line" class="title">常用命令</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+  <script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+  <script src="/js/post.js" type="text/javascript"></script>
+</body>
+
+</html>
