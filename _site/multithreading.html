@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>张勇杰的个人博客</title>
+    <title>iOS中多线程的几种方式 | 张勇杰的个人博客</title>
     <meta name="author" content="onzing" />
     <meta name="renderer" content="webkit">
     <meta name="description" content="张勇杰的个人博客" />
@@ -581,81 +581,180 @@ li.L9 {
 </style>
   </head>
 
-  <body>
-  <div class="index-wrapper">
-    <div class="aside">
-      <div class="info-card">
-        <h1>onzing</h1>
-        <a href="http://weibo.com/f1focus/" target="_blank"><img src="/images/weibo.png" alt="" width="25" /></a>
-        <a href="https://github.com/y-j" target="_blank"><img src="/images/github.png" alt="" width="25" /></a>
-        <a href="mailto:z-yj@outlook.com" target="_blank"><img src="/images/email.png" alt="" width="25" /></a>
-        <a href="https://www.zhihu.com/people/formula" target="_blank"><img src="/images/zhihu.png" alt="" width="25" /></a>
-      </div>
-      <div id="particles-js"></div>
-    </div>
+  <body class="body-post">
+  <div class="post-wrapper">
+    <h1 class="post-title"><a href="/multithreading" title="iOS中多线程的几种方式">iOS中多线程的几种方式</a></h1>
+    <p class="post-date">2015-04-08</p>
+    <h2 id="section">多线程</h2>
 
-    <div class="index-content">
-      <ul class="artical-list">
-        
-        <li>
-          <a href="/app-crash" class="title">App Crash统计分析</a>
-          <div class="title-desc">虽然应用上架前会经过大量的测试，不过一些不易察觉的bug在上架后导致crash还是时有发生的，对这些问题统计分析很有必要</div>
-        </li>
-        
-        <li>
-          <a href="/runtime" class="title">了解runtime运行时机制</a>
-          <div class="title-desc">runtime是纯c语言的api，平常编写的OC代码，在程序的运行过程中，最终都会转化成runtime的c语言代码。利用runtime主要是做一些底层的操作</div>
-        </li>
-        
-        <li>
-          <a href="/responder-chain" class="title">iOS事件的传递、响应者链</a>
-          <div class="title-desc">很多类型的事件的传递都依赖于响应者链，它始于第一响应者终于Application对象。如果第一响应者不能处理这个事件，它会将事件传递给响应者链中的下一个响应者。</div>
-        </li>
-        
-        <li>
-          <a href="/block-base" class="title">block的使用</a>
-          <div class="title-desc">block实际上和其他 变量类似，不过block存储的数据是一个函数体，所以使用block可以像其他标准函数一样传入参数并得到返回值</div>
-        </li>
-        
-        <li>
-          <a href="/multithreading" class="title">iOS中多线程的几种方式</a>
-          <div class="title-desc">使用线程可以把占据时间长的程序中的任务放到后台去处理，在一些等待的任务实现上如用户输入、文件读写和网络收发数据等，线程就比较有用了。在这种情况下可以释放一些珍贵的资源如内存占用等等</div>
-        </li>
-        
-        <li>
-          <a href="/vim-learn" class="title">vim快捷键学习</a>
-          <div class="title-desc">减少触控板或者鼠标的使用能让自己更加投入到代码上，vim作为一大利器，快捷键很多，不过常用的学会使用就可以很大的提高工作效率</div>
-        </li>
-        
-        <li>
-          <a href="/git-commad-line" class="title">在终端中使用Git</a>
-          <div class="title-desc">GitHub作为一个成熟的开源平台，成为了大量程序员活跃的地方，Git命令的使用也应该是一项必备技能，想要优雅的使用Git，这些命令就能满足。</div>
-        </li>
-        
-        <li>
-          <a href="/singleton-pattern" class="title">Objective-C中单例模式的实现方式</a>
-          <div class="title-desc">单例模式是设计模式中最简单的形式之一。这一模式的目的是使得类的一个对象成为系统中的唯一实例，从而确保所有对象都访问这个唯一实例，不过单例对象一旦建立，对象指针是保存在静态区的，单例对象在堆中分配的内存空间，会在应用程序终止后才会被释放。</div>
-        </li>
-        
-        <li>
-          <a href="/tcp-ip-socket" class="title">TCP/IP和Socket以及HTTP的区别</a>
-          <div class="title-desc">网络由下往上分为物理层，数据链路层，网络层，传输层，会话层，表示层和应用层。IP协议对应于网络层，TCP协议对应于传输层（TCP/IP主要解决数据如何在网络中传输），HTTP协议对应于应用层（主要解决如何包装数据），而Socket是对于TCP/IP协议的封装和应用，其本身并不是协议，而是一个调用接口，通过Socket才能使用TCP/IP协议。</div>
-        </li>
-        
-        <li>
-          <a href="/arc-mrc" class="title">Objective-C中两种内存管理机制：ARC和MRC</a>
-          <div class="title-desc">在OC中对象是存储在堆中，所以系统并不会自动释放堆中的内存（基本类型是由系统自己管理的，放在栈上），如果一个对象创建使用后没有及时释放会占用大量内存，所以内存管理需要开发人员维护</div>
-        </li>
-        
-        <li>
-          <a href="/command-line" class="title">常用命令</a>
-          <div class="title-desc">使用命令行再配合着item在mac上能显著的提高工作效率，这些事常用的一些命令</div>
-        </li>
-        
-      </ul>
-    </div>
+<p>首先CPU在同一时间只能处理一条线程，多线程的并发执行是指CPU快速的在不同线程之间切换，由于调度的时间很快，造成了一种多条线程同时执行的假象。</p>
+
+<ul>
+  <li>多线程的优点：
+    <ul>
+      <li>可以在一定程度上提高程序的执行效率</li>
+      <li>适当的提到系统资源的利用率</li>
+    </ul>
+  </li>
+  <li>多线程的缺点：
+    <ul>
+      <li>程序设计的会很复杂，线程之间的通信，数据传递会很麻烦。</li>
+      <li>开启线程需要占用一定的内存空间，如果开启了大量的线程，会占用大量的内存空间（主线程默认是1MB，子线程则是512KB，占用的内存空间可以更新，不过通常采取默认），线程开启的过多时，CPU调度的开销也会很大。</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="section-1">主线程</h2>
+<p>一个程序启动后，默认会开启一条线程，称为主线程，主要用来显示、刷新UI界面、处理UI事件。像是一些耗时的操作不要放在主线程中，否则会卡住主线程，影响UI的流畅。</p>
+
+<blockquote>
+  <p>iOS中常见的四种多线程方案</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pthread:基于C语言的跨平台API,不过很少用，手动管理生命周期
+NSThread:基于OC，面向对象，简单易用，手动管理生命周期
+GCD:基于C语言，能充分利用多核，而且自动管理生命周期
+NSOperation:基于OC对GCD的封装，面向对象，功能丰富，自动管理生命周期，和GCD一样经常使用
+</code></pre>
+</div>
+
+<h2 id="nsthread">NSThread</h2>
+<ul>
+  <li>创建线程</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(test) object:nil];// 通过创建NSThread对象创建一条线程,object:传入`test`函数的参数，这里传入为空
+[thread start];// 开启线程
+</code></pre>
+</div>
+
+<p>可以通过<code class="highlighter-rouge">+ (NSThread *)mainThread</code>获得主线程。</p>
+
+<p>还可以直接创建并启动线程，这样使用简单，不过不可以对线程做具体设置</p>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">NSThread</span> <span class="nf">detachNewThreadSelector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">test</span><span class="p">)</span> <span class="nf">toTarget</span><span class="p">:</span><span class="n">self</span> <span class="nf">withObject</span><span class="p">:</span><span class="nb">nil</span><span class="p">];</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">performSelectorInBackground</span><span class="p">:(</span><span class="n">SEL</span><span class="p">)</span><span class="nv">aSelector</span> <span class="nf">withObject</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="p">)</span><span class="nv">arg</span> <span class="n">NS_AVAILABLE</span><span class="p">(</span><span class="mi">10</span><span class="n">_5</span><span class="p">,</span> <span class="mi">2</span><span class="n">_0</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>线程的状态</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- (void)start;// 进入运行状态，在入伍执行完毕的时候，线程自动进入死亡状态。
++ (void)sleepUntilDate:(NSDate *)date;// 暂停
++ (void)sleepForTimeInterval:(NSTimeInterval)ti;// 暂停
++ (void)exit;// 进入死亡状态
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p>解决安全隐患的互斥锁
+<code class="highlighter-rouge">@synchronized(对象) { // 锁定代码  }</code>
+加锁能防止多线程同时访问数据造成的数据错乱，不过会消耗大量的CPU资源，互斥锁是以线程同步让多条线程在同一条线上按顺序执行任务。</p>
+  </li>
+  <li>
+    <p>线程间的通信</p>
+  </li>
+</ul>
+
+<p>在两个线程间需要传递数据，或者一个线程执行完任务后，需要在另一个线程继续执行任务</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- (void)performSelectorOnMainThread:(SEL)aSelector withObject:(nullable id)arg waitUntilDone:(BOOL)wait modes:(nullable NSArray&lt;NSString *&gt; *)array;// 数组中存放Runloop的模式
+- (void)performSelectorOnMainThread:(SEL)aSelector withObject:(nullable id)arg waitUntilDone:(BOOL)wait;
+	// equivalent to the first method with kCFRunLoopCommonModes(和前一个方法的kCFRunLoopCommonModes模式相等)
+- (void)performSelector:(SEL)aSelector onThread:(NSThread *)thr withObject:(nullable id)arg waitUntilDone:(BOOL)wait modes:(nullable NSArray&lt;NSString *&gt; *)array NS_AVAILABLE(10_5, 2_0);
+- (void)performSelector:(SEL)aSelector onThread:(NSThread *)thr withObject:(nullable id)arg waitUntilDone:(BOOL)wait NS_AVAILABLE(10_5, 2_0);
+	// equivalent to the first method with(和前一个方法的kCFRunLoopCommonModes模式相等) kCFRunLoopCommonModes
+		
+</code></pre>
+</div>
+
+    <div id="disqus_container">
+  <div class="share-con">
+    <script type="text/javascript" charset="utf-8">
+      (function(){
+        var param = {
+          url: 'http://onzing.com/multithreading',
+          type: '6',
+          title: '《iOS中多线程的几种方式》' + '- 使用线程可以把占据时间长的程序中的任务放到后台去处理，在一些等待的任务实现上如用户输入、文件读写和网络收发数据等，线程就比较有用了。在这种情况下可以释放一些珍贵的资源如内存占用等等',
+          ralateUid: '1511624324',
+          rnd:new Date().valueOf()
+        }
+        var temp = [];
+        for( var p in param ){
+          temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+        }
+        document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="86" height="16"></iframe>')
+      })()
+    </script>
   </div>
-</body>
 
+  <div id="disqus_thread"></div>
+</div>
+
+  </div>
+
+  <div class="about-wrapper">
+  <iframe width="100%" height="75" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=75&fansRow=2&ptype=1&speed=0&skin=5&isTitle=0&noborder=0&isWeibo=0&isFans=0&uid=1511624324&verifier=fab8d67b&dpc=1" style="margin: 30px 0;"></iframe>
+
+  <div class="aboutme">
+    <h2><a href="/">所有文章</a></h2>
+    <ul>
+      
+      <li>
+        <a href="/app-crash" class="title">App Crash统计分析</a>
+      </li>
+      
+      <li>
+        <a href="/runtime" class="title">了解runtime运行时机制</a>
+      </li>
+      
+      <li>
+        <a href="/responder-chain" class="title">iOS事件的传递、响应者链</a>
+      </li>
+      
+      <li>
+        <a href="/block-base" class="title">block的使用</a>
+      </li>
+      
+      <li>
+        <a href="/multithreading" class="title">iOS中多线程的几种方式</a>
+      </li>
+      
+      <li>
+        <a href="/vim-learn" class="title">vim快捷键学习</a>
+      </li>
+      
+      <li>
+        <a href="/git-commad-line" class="title">在终端中使用Git</a>
+      </li>
+      
+      <li>
+        <a href="/singleton-pattern" class="title">Objective-C中单例模式的实现方式</a>
+      </li>
+      
+      <li>
+        <a href="/tcp-ip-socket" class="title">TCP/IP和Socket以及HTTP的区别</a>
+      </li>
+      
+      <li>
+        <a href="/arc-mrc" class="title">Objective-C中两种内存管理机制：ARC和MRC</a>
+      </li>
+      
+      <li>
+        <a href="/command-line" class="title">常用命令</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+  <script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+  <script src="/js/post.js" type="text/javascript"></script>
+</body>
 
 </html>

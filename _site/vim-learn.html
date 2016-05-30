@@ -585,27 +585,33 @@ li.L9 {
   <div class="post-wrapper">
     <h1 class="post-title"><a href="/vim-learn" title="vim快捷键学习">vim快捷键学习</a></h1>
     <p class="post-date">2015-03-18</p>
-    <p>##插入模式
-* a – 在光标后插入
-* o – 在当前行后插入新的一行
-* O – 在当前行前插入新的一行
-* cw – 删除光标所在位置单词的从光标到单词结尾部分</p>
+    <p>##插入模式</p>
 
-<p>##移动光标
-* 0 – 数字0，当行头
-* ^ – 到本行第一个不是blank字符的位置（blank字符就是空格，tab， 换行，回车等）
-* $ – 到本行行尾
-* /test – 搜索test的字符串（搜索出多个结果，可按n键到下一个）
-* NG/:N – 到第N行（G是大写的）
-* gg – 到第一行（相当于1G，或:1）
-* G – 到最后一行
-* w – 到下一个单词的开头
-* e – 到下一个单词的结尾
-* % – 匹配对应点括号，如（，{， [。（需要把光标先移到括号上）
-* <em>和# – 匹配光标当前所在的单词，移动光标到下一个（或上一个）匹配单词（</em>是下一个，#是上一个）
-* <strong>很多命令可以和移动光标的命令联动</strong>
-```</p>
-<start position=""><command /><end position="">
+<ul>
+  <li>a – 在光标后插入</li>
+  <li>o – 在当前行后插入新的一行</li>
+  <li>O – 在当前行前插入新的一行</li>
+  <li>cw – 删除光标所在位置单词的从光标到单词结尾部分</li>
+</ul>
+
+<p>##移动光标</p>
+
+<ul>
+  <li>0 – 数字0，当行头</li>
+  <li>^ – 到本行第一个不是blank字符的位置（blank字符就是空格，tab， 换行，回车等）</li>
+  <li>$ – 到本行行尾</li>
+  <li>/test – 搜索test的字符串（搜索出多个结果，可按n键到下一个）</li>
+  <li>NG/:N – 到第N行（G是大写的）</li>
+  <li>gg – 到第一行（相当于1G，或:1）</li>
+  <li>G – 到最后一行</li>
+  <li>w – 到下一个单词的开头</li>
+  <li>e – 到下一个单词的结尾</li>
+  <li>% – 匹配对应点括号，如（，{， [。（需要把光标先移到括号上）</li>
+  <li><em>和# – 匹配光标当前所在的单词，移动光标到下一个（或上一个）匹配单词（</em>是下一个，#是上一个）</li>
+  <li><strong>很多命令可以和移动光标的命令联动</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;start position&gt;&lt;command&gt;&lt;end position&gt;
 如0y$
     * 0 -- 先到行头
     * y -- 从这里开始拷贝
@@ -619,29 +625,37 @@ li.L9 {
     * gu （变小写）
 （可视化选择可以先按v，然后移动光标，文本就会被选择，
 然后可以d，可以y，可以改变大小写）
-```
+</code></pre>
+</div>
 
-##拷贝/粘贴
-* p/P -- 粘贴（p是在当前位置之后，P是在当前位置之前）
-* yy -- 拷贝当前行（想当于ddp -- dd删除当前行后保存至粘贴板）
+<p>##拷贝/粘贴
+* p/P – 粘贴（p是在当前位置之后，P是在当前位置之前）
+* yy – 拷贝当前行（想当于ddp – dd删除当前行后保存至粘贴板）</p>
 
-## 撤销/重做
-* u -- 撤销上一个编辑操作
-* Ctrl-r -- 如果撤销太多，回退前一个命令（撤销一个撤销）
+<h2 id="section">撤销/重做</h2>
+<ul>
+  <li>u – 撤销上一个编辑操作</li>
+  <li>Ctrl-r – 如果撤销太多，回退前一个命令（撤销一个撤销）</li>
+</ul>
 
-## 打开/保存/退出/改变文件
-* :e &lt;path/to/file&gt; -- 打开一个文件
-* :w -- 存盘
-* :saveas &lt;path/to/file&gt; -- 另存为 &lt;path/to/file&gt;
-* :x, ZZ , :wq 保存并退出（:x表示紧在需要时保存，ZZ不需要输入冒号并回车）
-* :q! -- 退出不保存，:qa!强行退出正在编辑的文件，就算别的文件有更改。
-* :bn, :bq -- 可以同时打开很多文件，使用这两个命令来切换下一个或上一个文件（可以使用:n到下一个文件）
+<h2 id="section-1">打开/保存/退出/改变文件</h2>
+<ul>
+  <li>:e &lt;path/to/file&gt; – 打开一个文件</li>
+  <li>:w – 存盘</li>
+  <li>:saveas &lt;path/to/file&gt; – 另存为 &lt;path/to/file&gt;</li>
+  <li>:x, ZZ , :wq 保存并退出（:x表示紧在需要时保存，ZZ不需要输入冒号并回车）</li>
+  <li>:q! – 退出不保存，:qa!强行退出正在编辑的文件，就算别的文件有更改。</li>
+  <li>:bn, :bq – 可以同时打开很多文件，使用这两个命令来切换下一个或上一个文件（可以使用:n到下一个文件）</li>
+</ul>
 
-##重复执行命令
-* . -- (小数点)可以重复上一次的命令
-* N<command /> -- 重复某个命令N次
-```
- 2dd -- 删除2行
+<p>##重复执行命令</p>
+
+<ul>
+  <li>. – (小数点)可以重复上一次的命令</li>
+  <li>N<command /> – 重复某个命令N次</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> 2dd -- 删除2行
 3p -- 粘贴文本3次
 100itest [ESC] -- 会写下"
 test test test test test test test test test test 
@@ -656,10 +670,10 @@ test test test test test test test test test test
 test test test test test test test test test test"
  . -- 重复上一个命令 -- 100"test"
  3. -- 重复3次"test"
-```
+</code></pre>
+</div>
 
-感谢[酷壳](http://coolshell.cn/articles/5426.html)
-</end></start>
+<p>感谢<a href="http://coolshell.cn/articles/5426.html">酷壳</a></p>
 
     <div id="disqus_container">
   <div class="share-con">
@@ -694,11 +708,43 @@ test test test test test test test test test test"
     <ul>
       
       <li>
+        <a href="/app-crash" class="title">App Crash统计分析</a>
+      </li>
+      
+      <li>
+        <a href="/runtime" class="title">了解runtime运行时机制</a>
+      </li>
+      
+      <li>
+        <a href="/responder-chain" class="title">iOS事件的传递、响应者链</a>
+      </li>
+      
+      <li>
+        <a href="/block-base" class="title">block的使用</a>
+      </li>
+      
+      <li>
+        <a href="/multithreading" class="title">iOS中多线程的几种方式</a>
+      </li>
+      
+      <li>
         <a href="/vim-learn" class="title">vim快捷键学习</a>
       </li>
       
       <li>
         <a href="/git-commad-line" class="title">在终端中使用Git</a>
+      </li>
+      
+      <li>
+        <a href="/singleton-pattern" class="title">Objective-C中单例模式的实现方式</a>
+      </li>
+      
+      <li>
+        <a href="/tcp-ip-socket" class="title">TCP/IP和Socket以及HTTP的区别</a>
+      </li>
+      
+      <li>
+        <a href="/arc-mrc" class="title">Objective-C中两种内存管理机制：ARC和MRC</a>
       </li>
       
       <li>

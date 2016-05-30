@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>张勇杰的个人博客</title>
+    <title>iOS事件的传递、响应者链 | 张勇杰的个人博客</title>
     <meta name="author" content="onzing" />
     <meta name="renderer" content="webkit">
     <meta name="description" content="张勇杰的个人博客" />
@@ -581,81 +581,144 @@ li.L9 {
 </style>
   </head>
 
-  <body>
-  <div class="index-wrapper">
-    <div class="aside">
-      <div class="info-card">
-        <h1>onzing</h1>
-        <a href="http://weibo.com/f1focus/" target="_blank"><img src="/images/weibo.png" alt="" width="25" /></a>
-        <a href="https://github.com/y-j" target="_blank"><img src="/images/github.png" alt="" width="25" /></a>
-        <a href="mailto:z-yj@outlook.com" target="_blank"><img src="/images/email.png" alt="" width="25" /></a>
-        <a href="https://www.zhihu.com/people/formula" target="_blank"><img src="/images/zhihu.png" alt="" width="25" /></a>
-      </div>
-      <div id="particles-js"></div>
-    </div>
+  <body class="body-post">
+  <div class="post-wrapper">
+    <h1 class="post-title"><a href="/responder-chain" title="iOS事件的传递、响应者链">iOS事件的传递、响应者链</a></h1>
+    <p class="post-date">2015-06-01</p>
+    <ul>
+  <li>响应者链条：是由多个响应者对象连接起来的链条</li>
+  <li>作用：清楚的看见每个响应者之间的联系，并且可以让一个事件由多个对象处理。</li>
+  <li>响应者对象：有响应和处理事件能力的对象。</li>
+</ul>
 
-    <div class="index-content">
-      <ul class="artical-list">
-        
-        <li>
-          <a href="/app-crash" class="title">App Crash统计分析</a>
-          <div class="title-desc">虽然应用上架前会经过大量的测试，不过一些不易察觉的bug在上架后导致crash还是时有发生的，对这些问题统计分析很有必要</div>
-        </li>
-        
-        <li>
-          <a href="/runtime" class="title">了解runtime运行时机制</a>
-          <div class="title-desc">runtime是纯c语言的api，平常编写的OC代码，在程序的运行过程中，最终都会转化成runtime的c语言代码。利用runtime主要是做一些底层的操作</div>
-        </li>
-        
-        <li>
-          <a href="/responder-chain" class="title">iOS事件的传递、响应者链</a>
-          <div class="title-desc">很多类型的事件的传递都依赖于响应者链，它始于第一响应者终于Application对象。如果第一响应者不能处理这个事件，它会将事件传递给响应者链中的下一个响应者。</div>
-        </li>
-        
-        <li>
-          <a href="/block-base" class="title">block的使用</a>
-          <div class="title-desc">block实际上和其他 变量类似，不过block存储的数据是一个函数体，所以使用block可以像其他标准函数一样传入参数并得到返回值</div>
-        </li>
-        
-        <li>
-          <a href="/multithreading" class="title">iOS中多线程的几种方式</a>
-          <div class="title-desc">使用线程可以把占据时间长的程序中的任务放到后台去处理，在一些等待的任务实现上如用户输入、文件读写和网络收发数据等，线程就比较有用了。在这种情况下可以释放一些珍贵的资源如内存占用等等</div>
-        </li>
-        
-        <li>
-          <a href="/vim-learn" class="title">vim快捷键学习</a>
-          <div class="title-desc">减少触控板或者鼠标的使用能让自己更加投入到代码上，vim作为一大利器，快捷键很多，不过常用的学会使用就可以很大的提高工作效率</div>
-        </li>
-        
-        <li>
-          <a href="/git-commad-line" class="title">在终端中使用Git</a>
-          <div class="title-desc">GitHub作为一个成熟的开源平台，成为了大量程序员活跃的地方，Git命令的使用也应该是一项必备技能，想要优雅的使用Git，这些命令就能满足。</div>
-        </li>
-        
-        <li>
-          <a href="/singleton-pattern" class="title">Objective-C中单例模式的实现方式</a>
-          <div class="title-desc">单例模式是设计模式中最简单的形式之一。这一模式的目的是使得类的一个对象成为系统中的唯一实例，从而确保所有对象都访问这个唯一实例，不过单例对象一旦建立，对象指针是保存在静态区的，单例对象在堆中分配的内存空间，会在应用程序终止后才会被释放。</div>
-        </li>
-        
-        <li>
-          <a href="/tcp-ip-socket" class="title">TCP/IP和Socket以及HTTP的区别</a>
-          <div class="title-desc">网络由下往上分为物理层，数据链路层，网络层，传输层，会话层，表示层和应用层。IP协议对应于网络层，TCP协议对应于传输层（TCP/IP主要解决数据如何在网络中传输），HTTP协议对应于应用层（主要解决如何包装数据），而Socket是对于TCP/IP协议的封装和应用，其本身并不是协议，而是一个调用接口，通过Socket才能使用TCP/IP协议。</div>
-        </li>
-        
-        <li>
-          <a href="/arc-mrc" class="title">Objective-C中两种内存管理机制：ARC和MRC</a>
-          <div class="title-desc">在OC中对象是存储在堆中，所以系统并不会自动释放堆中的内存（基本类型是由系统自己管理的，放在栈上），如果一个对象创建使用后没有及时释放会占用大量内存，所以内存管理需要开发人员维护</div>
-        </li>
-        
-        <li>
-          <a href="/command-line" class="title">常用命令</a>
-          <div class="title-desc">使用命令行再配合着item在mac上能显著的提高工作效率，这些事常用的一些命令</div>
-        </li>
-        
-      </ul>
-    </div>
+<p>很多类型的事件的传递都依赖于响应者链，它始于第一响应者终于Application对象。如果第一响应者不能处理这个事件，它会将事件传递给响应者链中的下一个响应者。</p>
+
+<p>第一响应者是一个可以响应并处理事件的对象Event Object，该对象包含了事件处理所必须的一些信息。UIResponder是所有响应者对象的基类，它定义了一些通用的接口包括事件的处理和普遍的响应者行为，UIApplication，UIcontroller，和UIview类的实例都是响应者，不过因为CALayers继承的是NSObject，所以它不是响应者。
+一个响应者要成为第一响应者要经过两件事：</p>
+
+<ol>
+  <li>覆盖<code class="highlighter-rouge">- (BOOL)canBecomeFirstResponder;</code>返回YES</li>
+  <li>收到<code class="highlighter-rouge">- (BOOL)becomeFirstResponder;</code>消息
+&gt; 指定第一响应者对象前要确认app已经被建立，比如典型的条用<code class="highlighter-rouge">becomeFirstRespnder</code>方法在<code class="highlighter-rouge">viewDidAppear:</code>中，如果在<code class="highlighter-rouge">viewWillAppear:</code>指定第一响应者，那么对象绘制还没有被建立，以至于<code class="highlighter-rouge">becomeFirstResponder</code>方法会返回NO。</li>
+</ol>
+
+<p>事件并不是唯一依赖响应者链的对象，响应者链通常被使用在下面几种情况：</p>
+
+<ul>
+  <li><strong>触摸事件：</strong>对于触摸事件，window对象会尝试着首先将事件传递给触摸事件发生点的View。这个View被视为“命中测试view” (hit-test view)。寻找“命中测试view”的过程被称作“命中测试”，如果命中测试view不能处理触摸事件，这个事件就会被传递到响应者链中的命中view的上一个响应者。</li>
+  <li><strong>手势事件：</strong>使用UIKit处理震动手势事件，第一响应者要么必须实现<code class="highlighter-rouge">UIResponderd</code>的<code class="highlighter-rouge">motionBegain：withEvent:</code>方法要么实现<code class="highlighter-rouge">motionEnded：withEvent：</code>方法。</li>
+  <li><strong>远程控制事件：</strong>为了去处理“远程控制事件”，第一响应者必须实现UIResponderd的<code class="highlighter-rouge">remoteControlReceivedWithEvent:</code>方法。</li>
+  <li><strong>行为消息：</strong>当用户操作一个控制，例如一个button或者switch，在行为方法的目标是nil时，这个消息将会被通过响应者链从控制器view开始发送。
+iOS使用<strong>“命中测试”</strong>（hit-testing）去寻找触摸发生下的view。<strong>命中测试</strong>会执行检测判断是否该触摸点发生在某个具体的view的相对边界之内。如果检测是的，它就会递归的去检测该view的所有子view。该view的层级最底端view包含触摸点，它就成为了<strong>“命中测试view”。</strong>之后iOS就会决定谁是<strong>命中测试view</strong>,并且递交触摸事件给它处理。
+一个事件会游走于指定的传递路径很长的时间直到它被处理。首先，这个单例 UIApplication 对象会从事件队列顶部拿出一个事件对象用于分发处理。比较典型的就是，它会发送这个事件给 Window 对象，Window对象会递交事件给原始对象 initial object去处理。initial object取决于事件的类型。
+如果initial object（初始对象）命中测试view或者第一响应者不能处理该事件，UIKit会递交事件给响应者链中的下一个响应者。每一个响应者都有权决定它是否想要去处理该事件或者是继续递交给它自己的下一个响应者通过调用nextResponder方法。这个过程将会持续到某个响应者处理该事件或者没有更多的响应者为止。
+响应者链队列始于iOS侦测事件并且递交她给initial对象，那是一个典型的view。这个initialview具备优先处理事件的权利，如图显示了两个不同的应用构造的两个不同的事件传递路径。一个app的事件传递路径取决于它自身的构造，但是所有的事件传递都遵循相同的传递规则。
+<img src="/images/responderChain1.png" alt="" />
+对于左边的app，事件传递按下面的路径：
+    <ol>
+      <li> Initial view 尝试着去处理事件或者消息。如果不能处理事件，它就递交事件给superview,因为这个initial view并不是视图控制器层级中得顶级view.</li>
+      <li> 这个superview尝试去处理该事件，如果superview不能处理该事件，它就递交事件给它的父view，因为它也不是view层级的顶级view。</li>
+      <li> 视图控制器的顶级view尝试着去处理该事件，如果连顶级view都不能处理该事件，它就递交事件给它的controller。</li>
+      <li> 这个viewcontroller尝试着去处理该事件，并且如果它不能处理该事件，它就会递交事件给window。</li>
+      <li> 如果window不能处理该事件，它就递交事件给singlegon app object（既UIApplication）</li>
+      <li> 如果连application都不能处理该事件，那么毫无疑问该事件将会被丢弃。</li>
+    </ol>
+  </li>
+</ul>
+
+<p>右边的应用传递按照稍微不同的路径，但是所有的事件传递都遵循相同的传递规则：</p>
+
+<ol>
+  <li> 一个view controller层级中得view向上递交事件知道它到达顶级view。</li>
+  <li> 顶级view递交事件给它的controller。</li>
+  <li> Viewcontroller递交事件给它的顶级view的superview，步骤1-3重复直到它到达rootcontroller。</li>
+  <li> 这个rootviewcontroller递交事件给window对象。</li>
+  <li> window对象递交事件给application对象。</li>
+</ol>
+
+    <div id="disqus_container">
+  <div class="share-con">
+    <script type="text/javascript" charset="utf-8">
+      (function(){
+        var param = {
+          url: 'http://onzing.com/responder-chain',
+          type: '6',
+          title: '《iOS事件的传递、响应者链》' + '- 很多类型的事件的传递都依赖于响应者链，它始于第一响应者终于Application对象。如果第一响应者不能处理这个事件，它会将事件传递给响应者链中的下一个响应者。',
+          ralateUid: '1511624324',
+          rnd:new Date().valueOf()
+        }
+        var temp = [];
+        for( var p in param ){
+          temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+        }
+        document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="86" height="16"></iframe>')
+      })()
+    </script>
   </div>
-</body>
 
+  <div id="disqus_thread"></div>
+</div>
+
+  </div>
+
+  <div class="about-wrapper">
+  <iframe width="100%" height="75" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=75&fansRow=2&ptype=1&speed=0&skin=5&isTitle=0&noborder=0&isWeibo=0&isFans=0&uid=1511624324&verifier=fab8d67b&dpc=1" style="margin: 30px 0;"></iframe>
+
+  <div class="aboutme">
+    <h2><a href="/">所有文章</a></h2>
+    <ul>
+      
+      <li>
+        <a href="/app-crash" class="title">App Crash统计分析</a>
+      </li>
+      
+      <li>
+        <a href="/runtime" class="title">了解runtime运行时机制</a>
+      </li>
+      
+      <li>
+        <a href="/responder-chain" class="title">iOS事件的传递、响应者链</a>
+      </li>
+      
+      <li>
+        <a href="/block-base" class="title">block的使用</a>
+      </li>
+      
+      <li>
+        <a href="/multithreading" class="title">iOS中多线程的几种方式</a>
+      </li>
+      
+      <li>
+        <a href="/vim-learn" class="title">vim快捷键学习</a>
+      </li>
+      
+      <li>
+        <a href="/git-commad-line" class="title">在终端中使用Git</a>
+      </li>
+      
+      <li>
+        <a href="/singleton-pattern" class="title">Objective-C中单例模式的实现方式</a>
+      </li>
+      
+      <li>
+        <a href="/tcp-ip-socket" class="title">TCP/IP和Socket以及HTTP的区别</a>
+      </li>
+      
+      <li>
+        <a href="/arc-mrc" class="title">Objective-C中两种内存管理机制：ARC和MRC</a>
+      </li>
+      
+      <li>
+        <a href="/command-line" class="title">常用命令</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+  <script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+  <script src="/js/post.js" type="text/javascript"></script>
+</body>
 
 </html>

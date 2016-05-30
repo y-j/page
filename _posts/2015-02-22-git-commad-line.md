@@ -4,7 +4,7 @@ title: 在终端中使用Git
 description: GitHub作为一个成熟的开源平台，成为了大量程序员活跃的地方，Git命令的使用也应该是一项必备技能，想要优雅的使用Git，这些命令就能满足。
 category: blog
 ---
-# 本地操作
+<h2>本地操作</h2>
 * `ssh-keygen -t rsa -C "email@xxx.com"`
 * `git init` 把这个目录变成Git可以管理的仓库
 * `git diff test.txt` 查看文件具体修改的内容
@@ -50,7 +50,7 @@ category: blog
 * `git tag -a <tagname> -m "info"` 创建有说明的标签
 * `git tag -d <tagname>` 删除标签
 
-# 远程操作
+<h2>远程操作</h2>
 * `git clone <版本库的网址>` 从远程主机克隆一个版本库（克隆到当前目录，主机名默认为origin）
 * `git clone <版本库的网址> <本地目录名>` 从远程主机克隆一个版本库（克隆到指定目录）
 * ` git remote` 列出所有远程主机

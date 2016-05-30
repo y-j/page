@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>在终端中使用Git | 张勇杰的个人博客</title>
+    <title>block的使用 | 张勇杰的个人博客</title>
     <meta name="author" content="onzing" />
     <meta name="renderer" content="webkit">
     <meta name="description" content="张勇杰的个人博客" />
@@ -583,95 +583,198 @@ li.L9 {
 
   <body class="body-post">
   <div class="post-wrapper">
-    <h1 class="post-title"><a href="/git-commad-line" title="在终端中使用Git">在终端中使用Git</a></h1>
-    <p class="post-date">2015-02-22</p>
-    <h2>本地操作</h2>
-<ul>
-  <li><code class="highlighter-rouge">ssh-keygen -t rsa -C "email@xxx.com"</code></li>
-  <li><code class="highlighter-rouge">git init</code> 把这个目录变成Git可以管理的仓库</li>
-  <li><code class="highlighter-rouge">git diff test.txt</code> 查看文件具体修改的内容</li>
-  <li><code class="highlighter-rouge">git add test.txt</code> 把文件添加到仓库（实际是把文件修改添加到暂存区）</li>
-  <li><code class="highlighter-rouge">git status</code> 查看仓库当前的状态</li>
-  <li><code class="highlighter-rouge">git commit -m "info"</code> 把文件提交到仓库（把暂存区的所有内容提交到当前分支）</li>
-  <li><code class="highlighter-rouge">git log</code> 显示最近到最远的提交日志</li>
-  <li><code class="highlighter-rouge">git log --pretty=oneline</code> 只显示<strong>commit id</strong>（版本号）和“info”说明信息</li>
-  <li>
-    <p><code class="highlighter-rouge">git reset --hard HEAD^</code> 回到上一个版本
-&gt; HEAD表示当前版本，上一个版本是HEAD^，上上一个版本是HEAD^^，当前网上100个版本可以写成HEAD~100。
-<code class="highlighter-rouge">git reset --hard 232333</code>（回到某一个版本直接跟着commit id的前几位）
-<code class="highlighter-rouge">git diff HEAD -- test.txt</code>（查看工作区和版本库里面最新版本的区别）</p>
-  </li>
-  <li><code class="highlighter-rouge">git reflog</code> 记录着每一次的命令，（可查到对应每一个<strong>commit</strong>的<strong>commmit id</strong>）</li>
-  <li><code class="highlighter-rouge">git checkout -- test.txt</code> 撤销文件在工作区的修改</li>
-  <li>
-    <p><code class="highlighter-rouge">git checkout .</code> 撤销文件在工作区的所有修改</p>
+    <h1 class="post-title"><a href="/block-base" title="block的使用">block的使用</a></h1>
+    <p class="post-date">2015-04-28</p>
+    <p>block实际上和其他 变量类似，不过block存储的数据是一个函数体，所以使用block可以像其他标准函数一样传入参数并得到返回值。
+想要快速的写出一个block很简单，在Xcode中输入<code class="highlighter-rouge">inlineBlock</code>就会有代码补全提示</p>
 
-    <blockquote>
-      <p>两种情况
-一种是test.txt自修改后还没被放到暂存区，现在，撤销修改就是回到和版本库一模一样的状态
-一种是test.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加带暂存区后的状态
-总之，就是让这个文件回到最近一次<strong>git commit</strong> 或<strong>git add</strong>时的状态
-<code class="highlighter-rouge">git checkout -- test.txt</code> 命令中的–很重要，没有–就变成了切换到另一个分支的命令</p>
-    </blockquote>
-  </li>
-  <li><code class="highlighter-rouge">git reset  HEAD file</code> 把暂存区的修改撤销掉，从新放回工作区（如果想改变已经<strong>git add</strong>到暂存区的文件用这个命令，）</li>
-  <li>
-    <p><code class="highlighter-rouge">git rm</code> 删除一个文件
-  &gt; 如果test.txt文件在文件管理器中被删除了，
-但版本库中没有被删掉，这时可以<code class="highlighter-rouge">git rm test.txt</code>把文件从版本库中删掉，然后commit</p>
-  </li>
-  <li><code class="highlighter-rouge">git checkout -- test.txt</code> 找回在文件管理器中删除的文件，前提是文件已提交到git仓库</li>
-  <li><code class="highlighter-rouge">git checkout -b dev</code> 创建dev分支，然后切换到dev分支（相当于<strong>git branch dev</strong> 然后<strong>git checkout dev</strong>）</li>
-  <li><code class="highlighter-rouge">git branch</code> 查看当前分支</li>
-  <li><code class="highlighter-rouge">git branch -d dev</code> 删除dev分支</li>
-  <li><code class="highlighter-rouge">git merge dev</code> 把dev分支的工作成果合并到当前分支上</li>
-  <li><code class="highlighter-rouge">git stash</code> 把当前工作现场储藏起来， 等以后回复现场后继续工作。</li>
-  <li>`git stash list 显示储藏的工作现场列表</li>
-  <li><code class="highlighter-rouge">git stash apply</code> 恢复工作现场，stash不删除</li>
-  <li><code class="highlighter-rouge">git stash drop</code> 删除stash</li>
-  <li><code class="highlighter-rouge">git stash pop</code> 恢复并删除stash</li>
-  <li><code class="highlighter-rouge">git tag &lt;name&gt;</code> 打标签</li>
-  <li><code class="highlighter-rouge">git tag</code> 查看所有标签</li>
-  <li><code class="highlighter-rouge">git tag &lt;name&gt; &lt;4546546(commit id)&gt;</code> 在对应的提交上打标签</li>
-  <li><code class="highlighter-rouge">git show &lt;tagname&gt;</code> 查看标签信息</li>
-  <li><code class="highlighter-rouge">git tag -a &lt;tagname&gt; -m "info"</code> 创建有说明的标签</li>
-  <li><code class="highlighter-rouge">git tag -d &lt;tagname&gt;</code> 删除标签</li>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;#returnType#&gt;(^&lt;#blockName#&gt;)(&lt;#parameterTypes#&gt;) = ^(&lt;#parameters#&gt;) {
+    &lt;#statements#&gt;
+};
+</code></pre>
+</div>
+
+<p>这样只需在<code class="highlighter-rouge">=</code>左边填上返回值类型<code class="highlighter-rouge">returnType</code>，<code class="highlighter-rouge">block</code>的名称<code class="highlighter-rouge">blockName</code>，参数类型<code class="highlighter-rouge">parameterTypes</code>，=右边填上参数<code class="highlighter-rouge">parameters</code>，和想要执行的代码<code class="highlighter-rouge">statements</code>（如果有返回值，<code class="highlighter-rouge">return</code>返回值，如果没有可不写<code class="highlighter-rouge">return</code>）</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>int (^sumBlock)(int, int) = ^(int a, int b) {
+        return a + b;
+    };
+</code></pre>
+</div>
+
+<p>这是一个简单的block，各种参数都有，再比如</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> void (^testBlock)() = ^() { 
+        NSLog(@"=============");
+    };
+</code></pre>
+</div>
+
+<p>这是没有传入任何参数的情况，等号左边的传入参数类型的()不可省，等号右边如果没有参数，()可写可不写。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>__block int m = 10;
+void (^modifyValueBlock)() = ^() {
+        m = 5;
+};
+</code></pre>
+</div>
+
+<p>block内部可以访问外面的变量，但是默认情况下block内部不能修改外面的局部变量，通过给局部变量加上<code class="highlighter-rouge">__block</code>关键字，这样局部变量就可以在block内部修改.不过对于全局变量不仅可以使用而且还可以改变。</p>
+
+<p>有时候block的类型是规定的，可以通过typedef来定义block类型<code class="highlighter-rouge">typedef int (^MakeBlock)(int, int);</code>，这样可以很方便的创建block</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>MakeBlock sum = ^ (int a, int b) {
+    return a + b;
+};
+    
+MakeBlock minus = ^(int a, int b) {
+    return a - b;
+};
+</code></pre>
+</div>
+
+<p>这样以后直接可以使用<code class="highlighter-rouge">MakeBlock</code>来定义<code class="highlighter-rouge">block</code>变量。</p>
+
+<p><strong>block的通常使用场景</strong></p>
+
+<ul>
+  <li>block作为属性对象，在适当的时候调用</li>
 </ul>
 
-<h2>远程操作</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code> <span class="k">@interface</span> <span class="nc">Person</span> <span class="p">:</span> <span class="nc">NSObject</span>
+
+ <span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">copy</span><span class="p">)</span> <span class="kt">void</span><span class="p">(</span><span class="o">^</span><span class="n">studyBlock</span><span class="p">)();</span>
+
+ <span class="k">@end</span>
+</code></pre>
+</div>
+
+<p>在合适的地方给<code class="highlighter-rouge">studyBlock</code>赋值，需要调用的时候调用：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Person *p = [[Person alloc] init];
+p.studyBlcok = ^{
+        NSLog(@"studyBlcok reach");
+};
+p.studyBlcok();
+</code></pre>
+</div>
+
 <ul>
-  <li><code class="highlighter-rouge">git clone &lt;版本库的网址&gt;</code> 从远程主机克隆一个版本库（克隆到当前目录，主机名默认为origin）</li>
-  <li><code class="highlighter-rouge">git clone &lt;版本库的网址&gt; &lt;本地目录名&gt;</code> 从远程主机克隆一个版本库（克隆到指定目录）</li>
-  <li><code class="highlighter-rouge"> git remote</code> 列出所有远程主机</li>
-  <li><code class="highlighter-rouge">git remote -v</code> 查看远程主机的详细信息</li>
-  <li><code class="highlighter-rouge">git remote add &lt;主机名&gt; &lt;网址&gt;</code> 在本地的代码仓库下运行，添加远程主机，与之关联（主机名通常设为origin）</li>
-  <li><code class="highlighter-rouge">git remote rm &lt;主机名&gt;</code> 删除远程主机</li>
-  <li><code class="highlighter-rouge">git remote rename &lt;原主机名&gt; &lt;新主机名&gt;</code> 给远程主机改名</li>
-  <li><code class="highlighter-rouge">git push -u origin master</code> 把本地库的所有内容推送到远程库上（-u 指定一个默认主机，第一次指定后，以后可以不用-u）</li>
-  <li><code class="highlighter-rouge">git push origin &lt;分支名&gt;</code> 把该分支上的本地提交推送到远程库，如果远程仓库没有此分支，自动创建。</li>
-  <li><code class="highlighter-rouge">git push -f</code> 强推把本地的内容推送到远程仓库</li>
-  <li><code class="highlighter-rouge">git fetch</code> 将远程分支信息获取到本地</li>
-  <li><code class="highlighter-rouge">git checkout -b dev origin/dev</code> 创建远程origin的dev分支到本地dev</li>
-  <li><code class="highlighter-rouge">git branch -a</code> 查看远程分支</li>
-  <li><code class="highlighter-rouge">git branch --set-upstream dev origin/dev</code> 设置本地dev与远程origin/dev的链接</li>
-  <li><code class="highlighter-rouge">git pull</code> 把最新的提交从与本地对应的远程分支上的内容抓下来</li>
-  <li><code class="highlighter-rouge">git push origin &lt;tagname&gt;</code> 推送某个标签到远程</li>
-  <li><code class="highlighter-rouge">git push origin --tags</code> 推送全部尚未推送到远程的标签</li>
-  <li><code class="highlighter-rouge">git tag -d &lt;tagname&gt;</code> 为了删除远程的标签，现在本地删除</li>
-  <li><code class="highlighter-rouge">git push origin :refs/tags/&lt;tagname&gt;</code> 为了删除远程的标签，再在远程删除</li>
+  <li>block作为方法的参数使用，在方法内部调用，实现在外部</li>
 </ul>
 
-<p>这其中的部分命令是根据<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">廖雪峰的Git教程</a>再加上我在平常使用中积累而成，基本上能解决日常使用所需。</p>
+<div class="highlighter-rouge"><pre class="highlight"><code> <span class="k">typedef</span> <span class="kt">void</span><span class="p">(</span><span class="o">^</span><span class="n">makeBlcok</span><span class="p">)</span> <span class="p">();</span>
+ <span class="k">@interface</span> <span class="nc">Person</span> <span class="p">:</span> <span class="nc">NSObject</span>
 
+ <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">study</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)())</span><span class="nv">block</span><span class="p">;</span>
+ <span class="c1">// - (void)study:(makeBlcok)block;
+</span>
+ <span class="k">@end</span>
+ <span class="k">@implementation</span> <span class="nc">Person</span>
+
+ <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">study</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)())</span><span class="nv">block</span> <span class="p">{</span>
+<span class="err"> </span> <span class="err"> </span>     <span class="n">block</span><span class="p">();</span> <span class="c1">// 在外部传入定义好类型的block后，在这执行。
+</span> <span class="p">}</span>
+
+ <span class="k">@end</span>
+</code></pre>
+</div>
+
+<p>传入的参数类型为block类型，所有也可以给类型起个别名使用</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>        void(^typeBlock)() = ^() {
+            NSLog(@"study reach");
+        };
+        [p study:typeBlock];
+        // 或者
+        [p study:^{
+            NSLog(@"study reach");
+        }];
+</code></pre>
+</div>
+
+<p>这样传入制定类型的block，内部执行</p>
+
+<ul>
+  <li>block作为方法的返回值，目的就是为了代替方法，在内部实现</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> <span class="k">@interface</span> <span class="nc">Person</span> <span class="p">:</span> <span class="nc">NSObject</span>
+
+ <span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)())</span><span class="n">work</span><span class="p">;</span>
+
+ <span class="k">@end</span>
+
+ <span class="k">@implementation</span> <span class="nc">Person</span>
+
+ <span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)())</span><span class="n">work</span> <span class="p">{</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="o">^</span><span class="p">{</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">NSLog</span><span class="p">(</span><span class="s">@"work reach"</span><span class="p">);</span>
+<span class="err"> </span> <span class="err"> </span> <span class="p">};</span>
+ <span class="p">}</span>
+
+ <span class="k">@end</span>
+</code></pre>
+</div>
+
+<p>在返回block中执行代码</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// p.work(); 
+void(^ returnBlock)() = p.work;
+returnBlock(); // 这两种效果一样
+</code></pre>
+</div>
+
+<p><strong>block的递归调用</strong></p>
+
+<p>block想要递归调用，block变量必须是全局变量或者是静态变量，这样在程序启动的时候代码块变量就初始化了，可以递归调用</p>
+
+<ul>
+  <li>使用静态变量</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> - (void)testBlock {
+    static void (^ const block)(int) = ^(int i) {
+        if (i &gt; 0) {
+            NSLog(@"value = %d", i);
+            block(i - 1);
+        }
+    };
+    block(9);
+}
+</code></pre>
+</div>
+
+<p>如果将static去掉，那么在运行时就会出错，因为block在被函数块引用时是未初始化值，所以调用它的话就访问了无效地址，或者说所要执行的指令是未定义的。</p>
+
+<ul>
+  <li>作为全局变量</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>void (^ block)(int) = ^(int i) {
+    if (i &gt; 0) {
+        NSLog(@"value = %d", i);
+        block(i - 1);
+    }
+};
+</code></pre>
+</div>
+
+<p>当函数块引用是全局的或static的，即函数块内所引用的函数块引用变量的值在初始时就已经确定的，才可以使用递归。</p>
+
+<ul>
+  <li>block作为类的属性时使用copy修饰
+<code class="highlighter-rouge"><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">assign</span><span class="p">)</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)();</span></code>默认情况下block是在栈中，随时可能被回收，所以对block做一次copy操作，block的内存就会放在堆里面。</li>
+</ul>
 
     <div id="disqus_container">
   <div class="share-con">
     <script type="text/javascript" charset="utf-8">
       (function(){
         var param = {
-          url: 'http://onzing.com/git-commad-line',
+          url: 'http://onzing.com/block-base',
           type: '6',
-          title: '《在终端中使用Git》' + '- GitHub作为一个成熟的开源平台，成为了大量程序员活跃的地方，Git命令的使用也应该是一项必备技能，想要优雅的使用Git，这些命令就能满足。',
+          title: '《block的使用》' + '- block实际上和其他 变量类似，不过block存储的数据是一个函数体，所以使用block可以像其他标准函数一样传入参数并得到返回值',
           ralateUid: '1511624324',
           rnd:new Date().valueOf()
         }
