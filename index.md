@@ -8,7 +8,7 @@ layout: default
       <div class="info-card">
         <h1>onzing</h1>
         <a href="http://weibo.com/f1focus/" target="_blank"><img src="http://www.weibo.com/favicon.ico" alt="" width="25"/></a>
-        <a href="https://github.com/y-j" target="_blank"><img src="https://assets-cdn.github.com/favicon.ico" alt="" width="25"/></a>
+        <a href="https://github.com/y-j" target="_blank"><img src="http://upload-images.jianshu.io/upload_images/627316-40c6f1b285a41fe3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" width="25"/></a>
       </div>
       <div id="particles-js"></div>
     </div>
