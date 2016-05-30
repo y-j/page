@@ -156,7 +156,7 @@ a.external {
   background: url("/images/icons.gif") no-repeat right 1px;
 }
 a.external:hover {
-  background-position: right -15px;
+  background-position: right -15px;image
 }
 .index-wrapper .aside {
   position: fixed;
@@ -190,7 +190,7 @@ a.external:hover {
   font-size: 40px;
   color: #fff;
   margin-bottom: 20px;
-  text-shadow: 0 0 80px rgba(255,255,255,0.5);
+  /*text-shadow: 0 0 80px rgba(255,255,255,0.5);*/
   letter-spacing: 0.15em;
   text-shadow: rgba(255,255,255,0.5) 0 0 15px, rgba(255,255,255,0.5) 0 0 10px;
 }
