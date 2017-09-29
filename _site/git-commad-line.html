@@ -595,11 +595,12 @@ li.L9 {
   <li><code class="highlighter-rouge">git commit -m "info"</code> 把文件提交到仓库（把暂存区的所有内容提交到当前分支）</li>
   <li><code class="highlighter-rouge">git log</code> 显示最近到最远的提交日志</li>
   <li><code class="highlighter-rouge">git log --pretty=oneline</code> 只显示<strong>commit id</strong>（版本号）和“info”说明信息</li>
-  <li>
-    <p><code class="highlighter-rouge">git reset --hard HEAD^</code> 回到上一个版本
-&gt; HEAD表示当前版本，上一个版本是HEAD^，上上一个版本是HEAD^^，当前网上100个版本可以写成HEAD~100。
+  <li><code class="highlighter-rouge">git reset --hard HEAD^</code> 回到上一个版本
+    <blockquote>
+      <p>HEAD表示当前版本，上一个版本是HEAD^，上上一个版本是HEAD^^，当前网上100个版本可以写成HEAD~100。
 <code class="highlighter-rouge">git reset --hard 232333</code>（回到某一个版本直接跟着commit id的前几位）
 <code class="highlighter-rouge">git diff HEAD -- test.txt</code>（查看工作区和版本库里面最新版本的区别）</p>
+    </blockquote>
   </li>
   <li><code class="highlighter-rouge">git reflog</code> 记录着每一次的命令，（可查到对应每一个<strong>commit</strong>的<strong>commmit id</strong>）</li>
   <li><code class="highlighter-rouge">git checkout -- test.txt</code> 撤销文件在工作区的修改</li>
@@ -615,10 +616,11 @@ li.L9 {
     </blockquote>
   </li>
   <li><code class="highlighter-rouge">git reset  HEAD file</code> 把暂存区的修改撤销掉，从新放回工作区（如果想改变已经<strong>git add</strong>到暂存区的文件用这个命令，）</li>
-  <li>
-    <p><code class="highlighter-rouge">git rm</code> 删除一个文件
-  &gt; 如果test.txt文件在文件管理器中被删除了，
+  <li><code class="highlighter-rouge">git rm</code> 删除一个文件
+    <blockquote>
+      <p>如果test.txt文件在文件管理器中被删除了，
 但版本库中没有被删掉，这时可以<code class="highlighter-rouge">git rm test.txt</code>把文件从版本库中删掉，然后commit</p>
+    </blockquote>
   </li>
   <li><code class="highlighter-rouge">git checkout -- test.txt</code> 找回在文件管理器中删除的文件，前提是文件已提交到git仓库</li>
   <li><code class="highlighter-rouge">git checkout -b dev</code> 创建dev分支，然后切换到dev分支（相当于<strong>git branch dev</strong> 然后<strong>git checkout dev</strong>）</li>
@@ -697,26 +699,6 @@ li.L9 {
     <ul>
       
       <li>
-        <a href="/app-crash" class="title">App Crash统计分析</a>
-      </li>
-      
-      <li>
-        <a href="/runtime" class="title">了解runtime运行时机制</a>
-      </li>
-      
-      <li>
-        <a href="/responder-chain" class="title">iOS事件的传递、响应者链</a>
-      </li>
-      
-      <li>
-        <a href="/block-base" class="title">block的使用</a>
-      </li>
-      
-      <li>
-        <a href="/multithreading" class="title">iOS中多线程的几种方式</a>
-      </li>
-      
-      <li>
         <a href="/vim-learn" class="title">vim快捷键学习</a>
       </li>
       
@@ -725,15 +707,7 @@ li.L9 {
       </li>
       
       <li>
-        <a href="/singleton-pattern" class="title">Objective-C中单例模式的实现方式</a>
-      </li>
-      
-      <li>
         <a href="/tcp-ip-socket" class="title">TCP/IP和Socket以及HTTP的区别</a>
-      </li>
-      
-      <li>
-        <a href="/arc-mrc" class="title">Objective-C中两种内存管理机制：ARC和MRC</a>
       </li>
       
       <li>
